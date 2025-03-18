@@ -7,6 +7,16 @@
     android:id="@+id/main"
     android:padding="16dp">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#EB7575"
+        android:gravity="center"
+        android:text="Notes App"
+        android:padding="13dp"
+        android:textSize="35dp"
+        android:textStyle="bold" />
+
     <EditText
         android:id="@+id/titleInput"
         android:layout_width="match_parent"
