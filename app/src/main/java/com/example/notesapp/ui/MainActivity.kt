@@ -40,20 +40,7 @@ class MainActivity : AppCompatActivity() {
         val addButton=findViewById<Button>(R.id.addButton)
         val recyclerView=findViewById<RecyclerView>(R.id.recyclerView)
 
-         /*
-         adapter=NoteAdapter(emptyList()){note->
-             titleInput.setText(note.title)
-             descriptionInput.setText(note.description)
-             addButton.setOnClickListener{
-                 val updateNote=note.copy(
-                     title = titleInput.text.toString(),
-                     description=descriptionInput.text.toString()
-                 )
-                 //Log.d("MainActivity", "Updating note: $updatedNote")
-                 noteViewModel.update(updateNote)
-             }
-         }
-         */
+
         adapter = NoteAdapter(
             notes = mutableListOf(),
             onEditClick = { note ->
@@ -77,23 +64,7 @@ class MainActivity : AppCompatActivity() {
             Log.d("MainActivity", "Received notes from ViewModel: ${notes.size}")
             adapter.updateData(notes)
         }
-        /*
-        addButton.setOnClickListener{
-            val title=titleInput.text.toString()
-            val description=descriptionInput.text.toString()
-            if(title.isNotEmpty() && description.isNotEmpty()){
-                Log.d("MainActivity", "Adding new note: $title, $description")
-                noteViewModel.insert(Note(
-                    title = title, description = description))
-                titleInput.text.clear()
-                descriptionInput.text.clear()
 
-            }
-            else {
-                Log.d("MainActivity", "Invalid input: Title or description is empty")
-            }
-        }
-        */
         // Handle Insert/Update
         addButton.setOnClickListener {
             val title = titleInput.text.toString()
