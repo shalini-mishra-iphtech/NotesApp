@@ -5,14 +5,12 @@ import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import androidx.activity.enableEdgeToEdge
-
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-
 import com.example.notesapp.R
 import com.example.notesapp.model.Note
 
@@ -54,9 +52,6 @@ class MainActivity : AppCompatActivity() {
                 noteViewModel.delete(note)
             }
         )
-
-
-
         recyclerView.adapter=adapter
         recyclerView.layoutManager=LinearLayoutManager(this)
         noteViewModel.allNotes.observe(this){
