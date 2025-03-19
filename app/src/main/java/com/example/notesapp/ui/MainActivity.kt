@@ -29,6 +29,7 @@ class MainActivity : AppCompatActivity() {
             insets
         }
         Log.d("MainActivity", "Activity created")
+
         noteViewModel=ViewModelProvider(this)[NoteViewModel
         ::class.java]
         Log.d("MainActivity", "ViewModel initialized")
@@ -37,7 +38,6 @@ class MainActivity : AppCompatActivity() {
         val descriptionInput=findViewById<EditText>(R.id.descriptionInput)
         val addButton=findViewById<Button>(R.id.addButton)
         val recyclerView=findViewById<RecyclerView>(R.id.recyclerView)
-
 
         adapter = NoteAdapter(
             notes = mutableListOf(),

@@ -10,14 +10,14 @@ import com.example.notesapp.model.Note
 @Dao
 interface NoteDao{
     @Insert
-    fun insert(note:Note)
+  suspend  fun insert(note:Note)
 
     @Update
-    fun update(note:Note)
+   suspend fun update(note:Note)
 
     @Delete
-    fun delete(note: Note)
+    suspend fun delete(note: Note)
 
-    @Query("SELECT * FROM note_table ORDER BY id DESC")
-    fun getAllNotes():List<Note>
+    @Query("SELECT * FROM note_table ORDER BY id ")
+    suspend fun getAllNotes():List<Note>
 }
